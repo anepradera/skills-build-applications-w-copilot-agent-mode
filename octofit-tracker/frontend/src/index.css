@@ -1,0 +1,22 @@
+:root {
+  font-family: 'Trebuchet MS', 'Gill Sans', sans-serif;
+  color: #17211f;
+  background: #f1f4ee;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+a {
+  font: inherit;
+}
