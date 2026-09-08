@@ -18,10 +18,10 @@ function findItems(payload) {
   return []
 }
 
-export async function fetchCollection(resource, signal) {
-  const response = await fetch(`${apiBaseUrl}/api/${resource}/`, { signal })
+export async function fetchCollection(endpoint, signal) {
+  const response = await fetch(endpoint, { signal })
   if (!response.ok) {
-    throw new Error(`Unable to load ${resource} (${response.status})`)
+    throw new Error(`Unable to load API resource (${response.status})`)
   }
 
   return findItems(await response.json())

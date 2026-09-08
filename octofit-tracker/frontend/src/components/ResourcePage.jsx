@@ -7,7 +7,7 @@ function displayValue(value) {
   return String(value)
 }
 
-export default function ResourcePage({ resource, eyebrow, title, description, columns }) {
+export default function ResourcePage({ resource, endpoint, eyebrow, title, description, columns }) {
   const [items, setItems] = useState([])
   const [status, setStatus] = useState('loading')
   const [error, setError] = useState('')
@@ -15,7 +15,7 @@ export default function ResourcePage({ resource, eyebrow, title, description, co
   useEffect(() => {
     const controller = new AbortController()
 
-    fetchCollection(resource, controller.signal)
+    fetchCollection(endpoint, controller.signal)
       .then((nextItems) => {
         setItems(nextItems)
         setStatus('ready')
@@ -27,7 +27,7 @@ export default function ResourcePage({ resource, eyebrow, title, description, co
       })
 
     return () => controller.abort()
-  }, [resource])
+  }, [endpoint, resource])
 
   return (
     <section className="resource-page">
