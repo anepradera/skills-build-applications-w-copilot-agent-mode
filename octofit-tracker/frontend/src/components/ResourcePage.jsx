@@ -32,7 +32,10 @@ export default function ResourcePage({ resource, endpoint, eyebrow, title, descr
   return (
     <section className="resource-page">
       <div className="page-heading">
-        <p className="eyebrow">{eyebrow}</p>
+        <div className="heading-line">
+          <p className="eyebrow">{eyebrow}</p>
+          <span className="live-status"><span className="status-dot" /> Live feed</span>
+        </div>
         <h1>{title}</h1>
         <p className="page-description">{description}</p>
       </div>
@@ -41,7 +44,6 @@ export default function ResourcePage({ resource, endpoint, eyebrow, title, descr
         <span className="resource-count">
           {status === 'loading' ? 'Loading…' : `${items.length} records`}
         </span>
-        <span className="endpoint-label">/api/{resource}/</span>
       </div>
 
       <div className="table-frame">

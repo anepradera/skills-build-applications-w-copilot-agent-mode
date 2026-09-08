@@ -10,16 +10,19 @@ function App() {
   return (
     <div className="app-shell">
       <header className="app-header">
-        <div className="brand-mark">
-          <span className="brand-kicker">OCTOFIT</span>
-          <span className="brand-name">Tracker</span>
+        <div className="brand-mark" aria-label="OctoFit Tracker home">
+          <span className="brand-symbol">O</span>
+          <span className="brand-copy">
+            <span className="brand-kicker">OCTOFIT</span>
+            <span className="brand-name">Performance Club</span>
+          </span>
         </div>
         <nav className="main-nav" aria-label="Primary navigation">
-          <NavLink to="/activities">Activities</NavLink>
-          <NavLink to="/workouts">Workouts</NavLink>
-          <NavLink to="/teams">Teams</NavLink>
-          <NavLink to="/leaderboard">Leaderboard</NavLink>
-          <NavLink to="/users">Users</NavLink>
+          <NavLink to="/activities"><span className="nav-index">01</span>Activities</NavLink>
+          <NavLink to="/workouts"><span className="nav-index">02</span>Workouts</NavLink>
+          <NavLink to="/teams"><span className="nav-index">03</span>Teams</NavLink>
+          <NavLink to="/leaderboard"><span className="nav-index">04</span>Leaderboard</NavLink>
+          <NavLink to="/users"><span className="nav-index">05</span>Members</NavLink>
         </nav>
       </header>
 
@@ -33,6 +36,10 @@ function App() {
           <Route path="*" element={<Navigate to="/activities" replace />} />
         </Routes>
       </main>
+      <footer className="app-footer">
+        <span>TRAIN HARD / RECOVER SMART</span>
+        <span>OCTOFIT CLUB · 2026</span>
+      </footer>
     </div>
   )
 }

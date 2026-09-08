@@ -1,4 +1,11 @@
 import express from 'express';
+import {
+  sampleActivities,
+  sampleLeaderboard,
+  sampleTeams,
+  sampleUsers,
+  sampleWorkouts,
+} from './data/sampleData.js';
 
 const app = express();
 const port = Number(process.env.PORT) || 8000;
@@ -20,23 +27,23 @@ app.get('/api/health', (_request, response) => {
 });
 
 app.get('/api/users', (_request, response) => {
-  response.json([]);
+  response.json(sampleUsers);
 });
 
 app.get('/api/activities', (_request, response) => {
-  response.json([]);
+  response.json(sampleActivities);
 });
 
 app.get('/api/leaderboard', (_request, response) => {
-  response.json([]);
+  response.json(sampleLeaderboard);
 });
 
 app.get('/api/teams', (_request, response) => {
-  response.json([]);
+  response.json(sampleTeams);
 });
 
 app.get('/api/workouts', (_request, response) => {
-  response.json([]);
+  response.json(sampleWorkouts);
 });
 
 app.listen(port, () => {
